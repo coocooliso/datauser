@@ -4,6 +4,7 @@
   "description": "datauser package",
   "main": "app.js",
   "dependencies": {
+    "config": "^3.2.4",
     "dotenv": "^8.2.0",
     "envdot": "^0.0.3",
     "express": "^4.17.1",
