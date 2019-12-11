@@ -1,0 +1,31 @@
+{
+  "name": "datauser",
+  "version": "1.0.0",
+  "description": "datauser package",
+  "main": "app.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "envdot": "^0.0.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13",
+    "router": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "11.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coocooliso/datauser.git"
+  },
+  "author": "pw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coocooliso/datauser/issues"
+  },
+  "homepage": "https://github.com/coocooliso/datauser#readme"
+}
