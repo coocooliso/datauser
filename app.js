@@ -21,7 +21,7 @@ app.use(express.json());
 
 app.use('/api/userdata', userRouter);
 
-app.listen(config.get('DB_CONNECT'), (err, res) => {
+app.listen(process.env.PORT, (err, res) => {
     if (err) return res.status(400).send(err);
     console.log(`Listening on PORT: ${process.env.PORT}`);
 });
