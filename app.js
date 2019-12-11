@@ -6,12 +6,13 @@ const userRouter = require('./routes/userdata')
 
 require('dotenv').config();
 
-mongoose.connect(process.env.DB_CONNECT, {
+const db = config.get('db');
+mongoose.connect(db, {
         useNewUrlParser: true,
         useFindAndModify: false,
         useUnifiedTopology: true
     })
-    .then(() => console.log("Connected to database..."))
+    .then(() => console.log(`Connected to ${db}...`))
     .catch(err => {
         console.log(err);
     });
