@@ -1,12 +1,10 @@
-const config = require('config');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const userRouter = require('./routes/userdata')
 
-require('dotenv').config();
+require('dotenv').config({path:'/home/admin/datauser/.env'});
 
-//const db = config.get('db');
 mongoose.connect(process.env.DB_CONNECT, {
         useNewUrlParser: true,
         useFindAndModify: false,
