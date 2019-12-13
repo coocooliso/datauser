@@ -1,3 +1,6 @@
 {
-    "db": "db_address"
+    "db": "mongodb://localhost:27017/userdata",
+"db_address":"mongodb://localhost:27017/userdata",
+"metric_db":"mongodb://localhost:27017/userdata",
+"NODE_ENV":"production"
 }
