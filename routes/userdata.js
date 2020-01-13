@@ -16,8 +16,7 @@ router.post("/", async (req, res) => {
         }
         
     }   
-    
-    let dataUser = await UserData.findOne(query, (err)=> {
+    let dataUser = await UserData.findOne({"playerInfo.platform":query.playerInfo.platform,"playerInfo.userID":query.playerInfo.userID}, (err)=> {
      if(err) res.send(err);
     
  });
@@ -27,15 +26,18 @@ router.post("/", async (req, res) => {
             
                 dataUser = new UserData(req.body);
                 dataUser.userIp = req.connection.remoteAddress;
+                const result = await dataUser.save();
+                res.status(201).send('Created...');
             
             } else{
                 
                 let savedUser = await dataUser.updateOne(req.body);
                 savedUser = await dataUser.updateOne({userIp: req.connection.remoteAddress});
+                const result = await dataUser.save();
+                res.status(200).send('Updated...');
             }
             
-            const result = await dataUser.save();
-            res.status(201).send('Created...');
+            
 
     } catch(err) {
         res.status(400).send(`Error: ${err}`);
